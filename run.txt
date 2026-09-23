@@ -1,0 +1,1 @@
+python3 mergedash.py --since 2026-09-22 --until 2026-09-23 --approvals --pg-dsn "postgresql://user1@localhost:5432/gitlabmr" --pg-table gitlab_mergerequests

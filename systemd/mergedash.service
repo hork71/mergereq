@@ -1,0 +1,19 @@
+[Unit]
+Description=Sync GitLab merge requests to Postgres
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=mergedash
+Group=mergedash
+WorkingDirectory=/data/apps/mergedash
+ExecStart=/data/apps/mergedash/run-mergedash.sh
+Environment=PYTHONUNBUFFERED=1
+
+# Hardening — service account has no login shell and no reason to need more
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/data/apps/mergedash
+ProtectHome=true

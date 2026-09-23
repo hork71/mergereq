@@ -1,0 +1,2 @@
+mergedash:x:995:985::/data/apps/mergedash:/usr/sbin/nologin
+mergedash:x:985:www-data
